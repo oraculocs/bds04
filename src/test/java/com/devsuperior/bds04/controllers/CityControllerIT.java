@@ -47,6 +47,7 @@ public class CityControllerIT {
 		adminPassword = "123456";
 	}
 
+	//OK
 	@Test
 	public void insertShouldReturn401WhenNoUserLogged() throws Exception {
 
@@ -62,6 +63,7 @@ public class CityControllerIT {
 		result.andExpect(status().isUnauthorized());
 	}
 	
+	//OK
 	@Test
 	public void insertShouldReturn403WhenClientLogged() throws Exception {
 
@@ -80,6 +82,7 @@ public class CityControllerIT {
 		result.andExpect(status().isForbidden());
 	}
 	
+	//OK
 	@Test
 	public void insertShouldInsertResourceWhenAdminLoggedAndCorrectData() throws Exception {
 
@@ -100,6 +103,7 @@ public class CityControllerIT {
 		result.andExpect(jsonPath("$.name").value("Recife"));
 	}
 
+	//OK
 	@Test
 	public void insertShouldReturn422WhenAdminLoggedAndBlankName() throws Exception {
 
